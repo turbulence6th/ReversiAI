@@ -33,7 +33,7 @@ public class ReversiAI {
 		 * Try Minimax
 		 */
 		return minimax(1, board, spaces, Integer.MIN_VALUE, Integer.MAX_VALUE,
-				spaces.size() <= 12 ? Integer.MAX_VALUE : 7).getMove().getPosition();
+				spaces.size() <= 11 ? Integer.MAX_VALUE : 6).getMove().getPosition();
 
 	}
 
