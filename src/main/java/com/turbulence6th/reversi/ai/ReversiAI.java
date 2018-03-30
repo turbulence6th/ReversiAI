@@ -33,7 +33,7 @@ public class ReversiAI {
 		 * Try Minimax
 		 */
 		return minimax(1, board, spaces, Integer.MIN_VALUE, Integer.MAX_VALUE,
-				spaces.size() <= 10 ? Integer.MAX_VALUE : 5).getMove().getPosition();
+				spaces.size() <= 12 ? Integer.MAX_VALUE : 7).getMove().getPosition();
 
 	}
 
@@ -343,6 +343,13 @@ public class ReversiAI {
 					alpha = temp.getPoint();
 					score = temp;
 				}
+				
+				/**
+				 * Alpha Beta Prunning
+				 */
+				if (alpha >= beta) {
+					return score;
+	            }
 			}
 
 			else if (player == -1) {
@@ -352,6 +359,13 @@ public class ReversiAI {
 					beta = temp.getPoint();
 					score = temp;
 				}
+				
+				/**
+				 * Alpha Beta Prunning
+				 */
+				if (alpha >= beta) {
+					return score;
+	            }
 			}
 		}
 
@@ -377,6 +391,13 @@ public class ReversiAI {
 					score = temp;
 					score.setMove(move);
 				}
+				
+				/**
+				 * Alpha Beta Prunning
+				 */
+				if (alpha >= beta) {
+					return score;
+	            }
 			}
 
 			else if (player == -1) {
@@ -387,6 +408,13 @@ public class ReversiAI {
 					score = temp;
 					score.setMove(move);
 				}
+				
+				/**
+				 * Alpha Beta Prunning
+				 */
+				if (alpha >= beta) {
+					return score;
+	            }
 			}
 		}
 
