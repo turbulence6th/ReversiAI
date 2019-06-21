@@ -1,6 +1,7 @@
 package com.turbulence6th.reversi.ai;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -335,6 +336,9 @@ public class ReversiAI {
 
 		Node score = null, temp = null;
 		List<Move> validMoves = getValidMoves(board, spaces, player);
+
+		Collections.shuffle(validMoves);
+
 		if (validMoves.isEmpty()) {
 			if (player == 1) {
 				temp = minimax(-1, board, spaces, alpha, beta, depth - 1);
